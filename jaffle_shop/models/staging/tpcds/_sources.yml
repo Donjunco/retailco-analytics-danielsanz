@@ -1,0 +1,80 @@
+version: 2
+#recomendable tener un source por cada base de datos
+# Try using these source definitions instead!
+sources:
+  - name: raw_source
+    schema: RAW
+    database: RETAILCO_DEV_DANIELSANZ
+    description: DATOS SIN LIMPIAR DE LA BASE DE DATOS RETAILCO_DEV_DANIELSANZ
+    tables:
+      - name: CALL_CENTER
+        description: Información de cada centro de llamadas, incluyendo ubicación y características operativas.
+
+      - name: CATALOG_PAGE
+        description: Detalle de cada página del catálogo, con información sobre su contenido y estructura.
+
+      - name: CATALOG_RETURNS
+        description: Registros de devoluciones de productos provenientes de ventas por catálogo.
+
+      - name: CATALOG_SALES
+        description: Registros de ventas realizadas a través del catálogo, a nivel de línea de producto.
+
+      - name: CUSTOMER
+        description: Información de cada cliente, incluyendo datos personales y de identificación.
+
+      - name: CUSTOMER_ADDRESS
+        description: Direcciones asociadas a los clientes, con detalles geográficos y de localización.
+
+      - name: CUSTOMER_DEMOGRAPHICS
+        description: Datos demográficos de clientes, como género, estado civil, educación e ingresos.
+
+      - name: DATE_DIM
+        description: Dimensión de fechas, con atributos como día, mes, trimestre, año y banderas especiales.
+
+      - name: HOUSEHOLD_DEMOGRAPHICS
+        description: Información demográfica de hogares, como tamaño familiar y nivel de ingresos.
+
+      - name: INCOME_BAND
+        description: Rangos de ingresos utilizados para clasificar clientes y hogares.
+
+      - name: INVENTORY
+        description: Niveles de inventario por producto, almacén y fecha.
+
+      - name: ITEM
+        description: Información detallada de cada producto, incluyendo categoría, marca y atributos.
+
+      - name: PROMOTION
+        description: Detalles de promociones, descuentos y campañas aplicadas a productos o ventas.
+
+      - name: REASON
+        description: Motivos asociados a devoluciones u otras acciones comerciales.
+
+      - name: SHIP_MODE
+        description: Métodos de envío disponibles, con características y tiempos estimados.
+
+      - name: STORE
+        description: Información de cada tienda física, incluyendo ubicación y características operativas.
+
+      - name: STORE_RETURNS
+        description: Registros de devoluciones realizadas en tiendas físicas.
+
+      - name: STORE_SALES
+        description: Registros de ventas realizadas en tiendas físicas, a nivel de línea de producto.
+
+      - name: TIME_DIM
+        description: Dimensión de tiempo, con atributos como hora, minuto, segundo y bloques horarios.
+
+      - name: WAREHOUSE
+        description: Información de almacenes, incluyendo ubicación y capacidad.
+
+      - name: WEB_PAGE
+        description: Detalle de páginas del sitio web, con información estructural y de navegación.
+
+      - name: WEB_RETURNS
+        description: Registros de devoluciones provenientes de ventas realizadas por la web.
+
+      - name: WEB_SALES
+        description: Registros de ventas realizadas a través del sitio web, a nivel de línea de producto.
+
+      - name: WEB_SITE
+        description: Información general del sitio web, incluyendo configuración y características operativas.

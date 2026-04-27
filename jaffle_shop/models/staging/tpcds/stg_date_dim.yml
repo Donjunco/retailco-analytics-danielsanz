@@ -1,0 +1,9 @@
+models:
+  - name: stg_date_dim
+    description: Customer data with basic cleaning and transformation applied, one row per customer.
+    columns:
+      - name: D_DATE_SK
+        description: The unique key for each date sk.
+        tests:
+         - not_null
+         - unique

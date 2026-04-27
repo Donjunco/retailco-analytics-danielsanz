@@ -1,0 +1,37 @@
+#nombre del proyecto
+name: jaffle_shop
+
+#perfil de conexion
+profile: jaffle_shop
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  # Builds seeds into '<your_schema_name>_raw'
+  jaffle_shop:
+    +schema: raw
+
+#materializaciones
+models:
+  jaffle_shop:
+    +static_analysis: strict
+    # Materialize staging models as views, and marts as tables
+    staging:
+      +schema: STAGING
+      +materialized: view
+      #subcarpetas
+      tpcds:
+        +schema: STAGING
+        +materialized: view
+
+    intermediate:
+      +materialized: view
+        
+    marts:
+      +schema: MARTS
+      +materialized: table
