@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: mart_sales_by_channel
+    description: "Ventas por canal de venta, con limpieza y transformación básica aplicada, una fila por cliente."
+    columns:
+
+      - name: month
+        tests:
+          - not_null
+      
+      - name: avg_discount_pct
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
+                max_value: 1
+                strictly: false
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - month
+              - sales_channel
+              - store_sk
+              - web_page_sk
+              - call_center_sk
+              - product_category

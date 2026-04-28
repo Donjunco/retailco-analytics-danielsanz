@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: mart_inventory_health
+    description: "Saldo de inventario por artículo, con limpieza y transformación básica aplicada, una fila por artículo."
+
+    columns:
+
+      - name: item_sk
+        tests:
+          - not_null
+
+      - name: trend
+        tests:
+          - dbt_expectations.expect_column_values_to_match_regex:
+              arguments:
+                regex: "^(creciente|estable|decreciente)$"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - item_sk
+              - warehouse_sk
+              - week

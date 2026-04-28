@@ -1,0 +1,21 @@
+models:
+  - name: stg_web_returns
+    columns:
+      - name: returned_date_sk
+        tests:
+         - not_null
+        
+      - name: item_sk
+        tests:
+         - not_null
+         
+      - name: order_number
+        tests:
+         - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+         arguments:
+          combination_of_columns:
+            - order_number
+            - item_sk

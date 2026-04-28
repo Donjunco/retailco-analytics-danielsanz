@@ -1,0 +1,10 @@
+models:
+  - name: int_customer_enriched
+    description: >
+      al juntar 4 modelos todos relacionados con customer obtenemos un 
+      customer muy completo ya que nos da la informacion del cliente, 
+      informacion de direccion, demografia individual y del hogar. El junk se 
+      resolvio haciendo un left join del modelo customer con los modelos de 
+      demographics. 
+      Lo que hacen los modelos demographics es que dependiendo de la combiancion de campos
+      generara un sk distinto por eso son junk dimensions.

@@ -1,0 +1,7 @@
+models:
+  - name: stg_customer_demographics
+    columns:
+      - name: demo_sk
+        tests:
+         - not_null
+         - unique

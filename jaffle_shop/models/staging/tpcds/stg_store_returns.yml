@@ -1,0 +1,21 @@
+models:
+  - name: stg_store_returns
+    columns:
+      - name: return_date_sk
+        tests:
+         - not_null
+
+      - name: item_sk
+        tests:
+         - not_null
+
+      - name: ticket_number
+        tests:
+         - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+         arguments:
+          combination_of_columns:
+            - ticket_number
+            - item_sk

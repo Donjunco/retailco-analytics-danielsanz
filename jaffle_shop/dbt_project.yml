@@ -16,6 +16,12 @@ seeds:
   jaffle_shop:
     +schema: raw
 
+#para valores clv clientes
+vars:
+  clv_p33: 425.83
+  clv_p66: 1854.956
+
+
 #materializaciones
 models:
   jaffle_shop:
@@ -30,8 +36,16 @@ models:
         +materialized: view
 
     intermediate:
+      +schema: INTERMEDIATE
       +materialized: view
+      #subcarpetas
+      tpcds:
+        +schema: INTERMEDIATE
+        +materialized: view
         
     marts:
       +schema: MARTS
       +materialized: table
+      tpcds:
+        +schema: MARTS
+        +materialized: view

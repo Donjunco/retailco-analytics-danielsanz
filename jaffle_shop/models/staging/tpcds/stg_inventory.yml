@@ -1,0 +1,15 @@
+models:
+  - name: stg_inventory
+    columns:
+      - name: date_sk
+        tests:
+         - not_null
+
+      - name: item_sk
+        tests:
+         - not_null
+
+      - name: warehouse_sk
+        tests:
+         - not_null
+                                                                                                

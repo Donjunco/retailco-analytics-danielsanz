@@ -1,0 +1,11 @@
+models:
+  - name: stg_store
+    columns:
+      - name: store_sk
+        tests:
+         - not_null
+
+      - name: store_id
+        tests:
+          - not_null
+

@@ -1,0 +1,17 @@
+models:
+  - name: stg_promotion
+    columns:
+      - name: promotion_sk
+        tests:
+         - not_null
+
+      - name: promotion_id
+        tests:
+         - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+         arguments:
+          combination_of_columns:
+            - promotion_id
+            - item_sk

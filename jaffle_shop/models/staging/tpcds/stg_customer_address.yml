@@ -1,0 +1,12 @@
+models:
+  - name: stg_customer_address
+    columns:
+      - name: address_sk
+        tests:
+         - not_null
+         - unique
+
+      - name: address_id
+        tests:
+         - not_null
+         - unique
