@@ -14,11 +14,3 @@ El propósito principal es transformar datos crudos provenientes de la capa *raw
 - Pruebas de calidad (tests de unicidad, no nulos, relaciones, etc.)
 
 ---
-
-## 🛠️ Cómo reproducir el proyecto
-
-### 1. Clonar el repositorio
-
-```bash
-git clone <URL_DEL_REPO>
-cd <carpeta_del_proyecto>
