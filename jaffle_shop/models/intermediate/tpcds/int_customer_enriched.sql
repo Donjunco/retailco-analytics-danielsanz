@@ -1,4 +1,4 @@
-    
+    --- Esta vista enriquecida del cliente combina información de varias tablas relacionadas con el cliente, como su dirección, demografía y datos del hogar. Esto permite un análisis más completo del cliente y su comportamiento de compra.
     with customer as(
         select * from {{ ref('stg_customer') }}
     ),

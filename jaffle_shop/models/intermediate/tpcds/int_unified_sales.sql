@@ -1,3 +1,4 @@
+--Esta vista unificada combina las ventas de tienda, catálogo y web en una sola tabla, con una columna adicional que indica el canal de venta. Esto facilita el análisis de las ventas por canal y permite comparar el rendimiento entre ellos.
 with store_sales as (
 select
     'store' as sales_channel,
@@ -31,6 +32,7 @@ select
     null as web_page_sk,
 
     i.category as product_category,
+    --agrupamos por mes para facilitar el análisis temporal, se puede cambiar a semana o trimestre si se prefiere
     date_trunc('month', d.date) as month
 
 

@@ -12,6 +12,7 @@ with data as (
 
 select *
 from data
+--filtro para quedarnos solo con clientes con CLV positivo y sin transacciones
 where clv > 0
   and (coalesce(store_transactions, 0)
      + coalesce(web_transactions, 0)

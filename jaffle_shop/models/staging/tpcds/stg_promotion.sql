@@ -18,6 +18,7 @@ renamed as (
     p_cost as cost,
     p_response_target as response_target,
     p_promo_name as promotion_name,
+    --convirtimos los canales de promoción en booleanos, si el canal es nulo o no es 'Y', lo consideramos como falso
     (coalesce(p_channel_dmail, 'N') = 'Y') as channel_direct_mail,
     (coalesce(p_channel_email, 'N') = 'Y') as channel_email,
     (coalesce(p_channel_catalog, 'N') = 'Y') as channel_catalog,

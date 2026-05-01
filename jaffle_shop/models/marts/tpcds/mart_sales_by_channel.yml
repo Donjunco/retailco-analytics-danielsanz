@@ -11,6 +11,7 @@ models:
       
       - name: avg_discount_pct
         tests:
+          #el porcentaje de descuento debe estar entre 0 y 1, incluyendo ambos extremos
           - dbt_expectations.expect_column_values_to_be_between:
               arguments:
                 min_value: 0

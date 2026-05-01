@@ -1,3 +1,4 @@
+-- Esta vista unificada combina las devoluciones de tienda, catálogo y web en una sola tabla, con una columna adicional que indica el canal de venta. Esto facilita el análisis de las devoluciones por canal y permite comparar el rendimiento entre ellos.
 with store_returns as (
 select
     'store' as sales_channel,

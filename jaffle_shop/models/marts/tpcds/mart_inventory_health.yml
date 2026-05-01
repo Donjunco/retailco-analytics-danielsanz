@@ -11,6 +11,7 @@ models:
           - not_null
 
       - name: trend
+        #el valor de trend debe ser 'creciente', 'estable' o 'decreciente'
         tests:
           - dbt_expectations.expect_column_values_to_match_regex:
               arguments:

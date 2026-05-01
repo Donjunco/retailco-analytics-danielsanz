@@ -22,6 +22,7 @@ models:
          - not_null          
 
     tests:
+      #combinación única de order_number e item_sk
       - dbt_utils.unique_combination_of_columns:
          arguments:
           combination_of_columns:

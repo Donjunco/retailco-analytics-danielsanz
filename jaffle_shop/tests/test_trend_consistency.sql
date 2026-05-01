@@ -7,6 +7,7 @@ with data as (
         week,
         avg_stock_week,
         trend,
+        --calculo del stock de la semana anterior usando una función de ventana
         lag(avg_stock_week) over (
             partition by item_sk, warehouse_sk
             order by week

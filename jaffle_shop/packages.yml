@@ -1,5 +1,6 @@
 packages:
   - package: dbt-labs/dbt_utils
     version: ">=1.3.0"
+    #paquete que permite validad nuestros datos con test avanzados
   - package: calogica/dbt_expectations
     version: [">=0.10.0", "<0.11.0"]

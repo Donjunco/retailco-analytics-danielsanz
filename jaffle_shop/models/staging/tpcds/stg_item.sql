@@ -12,6 +12,7 @@ renamed as (
     select 
     i_item_sk::NUMBER as item_sk,
     i_item_id as item_id,
+    --intento convertir las fechas a un formato de fecha, si no se puede convertir, se devuelve null
     try_to_date(i_rec_start_date) as record_start_date,
     try_to_date(i_rec_end_date) as record_end_date,
     i_item_desc as item_desc,
